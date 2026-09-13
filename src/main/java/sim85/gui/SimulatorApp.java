@@ -22,6 +22,7 @@ public class SimulatorApp extends Application {
     }
 
     public static void main(String[] args) {
+        
         launch(args);
     }
 }

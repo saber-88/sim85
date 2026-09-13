@@ -1,8 +1,12 @@
 package sim85.core;
 
 public class Memory {
-    private int[] memory = new int[65536]; // 64KB of memory
-
+    private int[] memory ; // 64KB of memory
+    final private int size=65536;
+    public Memory()
+    {
+        memory= new int[size];
+    }
     public int read(int address) {
         return memory[address & 0xFFFF];
     }
@@ -13,5 +17,17 @@ public class Memory {
 
     public void reset() {
         java.util.Arrays.fill(memory, 0);
+    }
+
+    public int size() {
+        return size;
+    }
+    public int[] getCompleteMemory()
+    {
+        return memory;
+    }
+    public void setCompleteMemory(int [] memory)
+    {
+        this.memory=memory;
     }
 }
